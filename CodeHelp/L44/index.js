@@ -162,18 +162,24 @@ console.log("/////////////////////////   forIn - Objects Only - async await frie
 
 let newObject = {id: 1, name: 'Sandesh'};
 for(key in newObject){
-    console.log("value in key '", key, "' is: ", newObject[key]);
+    console.log("value in key '", key, "' is: ", newObject[key]);// This will be key and not the value
 };
 
-console.log("/////////////////////////   for of - ANy iterable object - async await friendly  ///////////////////////")
+console.log("/////////////////////////   for of - Any iterable object - async await friendly  ///////////////////////")
 
 newObject = {id: 1, name: 'Sandesh'};
 newArray = [10,20,30,40,50];
 
-for(let value in newObject){
-    console.log(value);
-};
+// for(let value of newObject){
+//     console.log(value);  THROWS NOT ITERABLE ERROR AS PLAIN OBJECTS ARE NOT ITERABLE
+// };
 
-for(let value in newArray){
+// If you want BOTH (using array destructuring)
+for (const [key, value] of Object.entries(newObject)) {
+    console.log(`${key}: ${value}`);
+}
+//By using Object.entries(newObject), you turn the object into a 2D array: [['id', 1], ['name', 'Sandesh']]
+
+for(let value of newArray){
     console.log(value);
 };

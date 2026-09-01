@@ -24,7 +24,7 @@ let test0 = "Checking test0";
 {
   let test3 = "Hello";
   console.log(test3);
-  //   let test3 = 123; // This throws and error
+  //   let test3 = 123; // This throws an error
   //   console.log(test3);
   test3 = true;
   console.log(test3);
@@ -46,7 +46,7 @@ const value1 = 0;
 console.log(value1);
 
 {
-    const value1 = 1;
+    const value1 = 1; // Redeclaration is allowed for different scope
     console.log(value1);
 }
 
@@ -56,7 +56,7 @@ console.log("///////////////////////////////////////////////////////////////////
 let checkForCase = "123";
 let CHECKFORCASE = "456";
 
-console.log(checkForCase);
+console.log(checkForCase); //Js is case sensitive
 
 //  PRIMITIVE DATATYPES IN JAVA
 const eg1 = 123; //number
